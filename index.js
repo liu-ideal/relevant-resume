@@ -1,32 +1,38 @@
-var professionalSkill=`专业技能
-
-Vue / bootstrap/layui ElementUi
+var toWrite =new Object();
+toWrite.professionalSkillH2=`专业技能`;
+toWrite.professionalSkill=`## Vue / bootstrap/layui ElementUi
 Vue 开发经验，掌握组件及组件间数据传递($emit $on eventbus)、响应式原理、vue-router和 vuex 的使用等,理解生命周期、$nextTick
 能够利用bootstrap 等UI框架快速搭建应用
 会使用 rem 、媒体查询等技术制作适配移动设备的页面
 
-HTML5 & CSS3 & JavaScript
+## HTML5 & CSS3 & JavaScript
 掌握 HTML5 新特性、深刻理解语义化
 掌握 CSS3 动画、过渡、转变、弹性盒子布局、媒体查询、响应式设计等常用技术
 熟悉 原生JavaScript 熟悉面向对象编程 原型链 作用域链 闭包，熟悉常用 DOM BOM 的API，了解部分ES6新特性（let const，Arrow function Promise module等）
 
-掌握Git 常用命令、版本管理 协同开发 远程仓库等
+## 其他
+掌握Git 常用命令、代码管理 协同开发 远程仓库等
 了解 jQuery 常用 API ，如 DOM 操作、特效、事件等
 了解 TCP/IP HTTP协议 HTTP状态码
 熟悉 原生AJAX 前后端数据交互 JSON 跨域解决方案
 理解 MVC 、 MVVM 思想
 会photoshop基本操作
 有使用 Webpack 打包项目的经验，了解其管理资源的方法，使用相关配置 如 loader( css-loader  file-loader) 、 plugins 等`;
-var programWorks=`
-音乐播放器online
-关键字：vue 响应式 移动端 组件化 css3
+toWrite.basicInformation=` 姓名： 刘培
+  求职意向： web 前 端 开 发
+ email: liuideal@sina.com
+github: http://github.com/liu-ideal
+`;
+toWrite.programWorksH2=`项目经验`;
+toWrite.programWorks=`音乐播放器online
+技术关键字：vue 响应式 移动端 组件化 css3
 项目描述：项目使用vue构建 做了移动端适配 实现了音乐搜索 播放等基本功能
 
-
 记事本online
-关键字：vue elment-ui
+技术关键字：vue elment-ui
 项目描述：项目实现了基本的注册登录功能 简单记事功能`;
-var styleCode=`
+
+toWrite.styleCode=`
 /*您好，接下来您将会看到一个
 
   由代码实时编写我的个人简历的过程
@@ -99,30 +105,116 @@ h2{
   border-bottom: 1px solid black;
 
 }
-
-/*--------开始书写简历 请看右边---------*/
-
-/*最后做个微调*/
+.generalContainer .writeResume .basicInformation{
+  text-align: center;
+}
 .writeResume{
   line-height: 32px;
 }
-`;
+.projectExp{
+  margin-top:-80px;
+}
+/*--------开始书写简历 请看右边---------*/
 
-var headO = document.getElementsByTagName('head')[0];
-var styleO = document.createElement('style');
-var writeCodeO=document.getElementsByClassName('writeCode')[0];
-styleO.setAttribute('type','text/css'),headO.appendChild(styleO);
-var codeContainer=document.getElementsByClassName('writeCode')[0].getElementsByTagName('code')[0];
+`;
+var writeResumeO=document.querySelector('.writeResume');
+var promise=new Promise(function(resolve,reject){
+  var headO = document.getElementsByTagName('head')[0];
+  var styleO = document.createElement('style');
+  var writeCodeO=document.getElementsByClassName('writeCode')[0];
+  styleO.setAttribute('type','text/css'),headO.appendChild(styleO);
+  var codeContainer=document.getElementsByClassName('writeCode')[0].getElementsByTagName('code')[0];
+  let n=0;
+  var timer=setInterval(()=>{
+    if(n>toWrite.styleCode.length){
+      clearInterval(timer);
+      resolve();
+      return
+    }
+    codeContainer.innerHTML=toWrite.styleCode.substring(0,n);
+    styleO.innerHTML=toWrite.styleCode.substring(0,n);
+      hljs.initHighlightingOnLoad();
+     writeCodeO.scrollTop=9999;
+    n++;
+  },15)
+});
+/*--------------------*/
+promise.then(function(value){
+  return new Promise(infomation)
+}).then(function(value){
+  return new Promise(fnn)
+}).then(function(value){
+  return new Promise(function(resolve){
+    let n =0;
+    var skillsPO=document.querySelector('.writeResume .skills p');
+    var timer=setInterval(()=>{
+      //console.log(toWrite.professionalSkill.length);
+      if(n>toWrite.professionalSkill.length){
+        clearInterval(timer);
+        resolve();
+        return
+      }
+      skillsPO.innerHTML=toWrite.professionalSkill.substring(0,n);
+      writeResumeO.scrollTop=9999;
+      n++
+    },15)
+  })
+}).then(function(){
+  return new Promise(function(resolve){
 let n=0;
-var timer=setInterval(()=>{
-  if(n===styleCode.length){
+let expH2=document.querySelector('.writeResume .projectExp h2');
+let timer=setInterval(()=>{
+  if(n>toWrite.programWorksH2.length){
     clearInterval(timer);
+    resolve();
     return
   }
-  codeContainer.innerHTML=styleCode.substring(0,n);
-  styleO.innerHTML=styleCode.substring(0,n);
-    hljs.initHighlightingOnLoad();
-   writeCodeO.scrollTop=9999;
-  n++;
+  expH2.innerHTML=toWrite.programWorksH2.substring(0,n);
+  writeResumeO.scrollTop=9999;
+  n++
 },15)
-var pro=new Promise()
+})
+}
+
+  ).then(function(value){
+    let n=0;
+    let expP=document.querySelector('.writeResume .projectExp p');
+    let timer=setInterval(()=>{
+      if(n>toWrite.programWorks.length){
+        clearInterval(timer);
+        return
+      }
+      expP.innerHTML=toWrite.programWorks.substring(0,n);
+      writeResumeO.scrollTop=9999;
+      n++
+    },15)
+  })
+function infomation(resolve){
+  let n =0;
+  let infO=document.querySelector('.basicInformation');
+  let timer=setInterval(()=>{
+    if(n>toWrite.basicInformation.length){
+      clearInterval(timer);
+      resolve();
+      return
+    }
+    infO.innerHTML=toWrite.basicInformation.substring(0,n);
+    writeResumeO.scrollTop=9999;
+    n++
+  },15)
+}
+
+function fnn(resolve){
+  let n =0;
+  var skillsH2O=document.querySelector('.writeResume .skills h2');
+  var timer=setInterval(()=>{
+    if(n>toWrite.professionalSkillH2.length){
+      clearInterval(timer);
+      resolve();
+      return
+    }
+    skillsH2O.innerHTML=toWrite.professionalSkillH2.substring(0,n);
+    writeResumeO.scrollTop=9999;
+    n++
+  },15)
+}
