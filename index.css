@@ -1,0 +1,70 @@
+/*
+* 您好，接下来您将会看到一个
+由代码实时编写我的个人简历的过程
+当然，您可以随时点击页面中心的跳过按钮
+来查看简历最终效果 *
+------下面正式开始------
+*/
+/*首先简单的reset一下样式并添加全局过渡*/
+*{
+  padding: 0;
+  margin: 0;
+  transition: all .3s;
+}
+html{
+  height: 100%;
+}
+/*添加一个深色背景*/
+body{
+  background-color: rgb(29, 45, 51);
+  font-family: 'Arial','Microsoft YaHei';
+  font-size: 15px;
+  height: 100%;
+}
+/*构建一下基本布局*/
+.generalContainer{
+  color: rgb(247, 245, 242);
+  display: flex;
+  padding: 15px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.generalContainer .writeCodeWrap{
+  flex-grow: 1;
+}
+/*写个简历框用来放简历*/
+.generalContainer .writeResume{
+  flex-grow: 5;
+  margin-left: 40px;
+  background-color: rgb(246, 244, 240);
+  overflow: auto;
+  padding:0 30px;
+}
+/*然后给这部分加点边距和边框*/
+.generalContainer .writeCodeWrap .writeCode{
+  box-sizing: border-box;
+  padding: 10px 0 0 8px;
+  height:100%;
+  overflow: auto;
+  border: 1px solid rgb(70, 71, 74);
+}
+/*给简历部分设置写一下基本样式*/
+.generalContainer .writeResume{
+  white-space: pre;
+  color: rgb(0, 0, 0)
+}
+h2{
+  font-size: 19px;
+  color: rgb(72, 106, 164);
+  text-indent: 30px;
+  border-bottom: 1px solid black;
+
+}
+/*--------开始书写简历 请看右边---------*/
+
+/*最后做个微调*/
+.writeResume{
+  line-height: 32px;
+}
