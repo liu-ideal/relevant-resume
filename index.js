@@ -14,7 +14,7 @@ Vue 开发经验，掌握组件及组件间数据传递($emit $on eventbus)、�
 掌握Git 常用命令、代码管理 协同开发 远程仓库等
 了解 jQuery 常用 API ，如 DOM 操作、特效、事件等
 了解 TCP/IP HTTP协议 HTTP状态码
-熟悉 原生AJAX 前后端数据交互 JSON 跨域解决方案
+熟悉 原生AJAX JSON 前后端数据交互 跨域解决方案
 理解 MVC 、 MVVM 思想
 会photoshop基本操作
 有使用 Webpack 打包项目的经验，了解其管理资源的方法，使用相关配置 如 loader( css-loader  file-loader) 、 plugins 等`;
@@ -26,7 +26,7 @@ github: http://github.com/liu-ideal
 toWrite.programWorksH2=`项目经验`;
 toWrite.programWorks=`音乐播放器online
 技术关键字：vue 响应式 移动端 组件化 css3
-项目描述：项目使用vue构建 做了移动端适配 实现了音乐搜索 播放等基本功能
+项目描述：项目使用vue构建 适配移动端 实现了音乐搜索 播放等基本功能
 
 记事本online
 技术关键字：vue elment-ui
@@ -117,7 +117,30 @@ h2{
 /*--------开始书写简历 请看右边---------*/
 
 `;
+let wrap=(function(){
+  let wrap=document.createElement('div');
+  wrap.style.position='fixed';
+  wrap.style.width='100%';
+  wrap.style.height='100%';
+  wrap.style.backgroundColor='rgba(0,0,0,0.1)';
+  wrap.style.top=0;
+  wrap.style.left=0;
+  function insert(zindex){
+    document.querySelector('body').appendChild(wrap);
+    wrap.style.zIndex=zindex||99;
+  }
+  function del(){
+    document.querySelector('body').removeChild(wrap)
+  }
+  return {
+    insert:insert,
+    del:del
+  }
+})();
+wrap.insert();
 var writeResumeO=document.querySelector('.writeResume');
+var writeCodeO=document.getElementsByClassName('writeCode')[0];
+let timer=null;
 var promise=new Promise(function(resolve,reject){
   var headO = document.getElementsByTagName('head')[0];
   var styleO = document.createElement('style');
@@ -125,7 +148,7 @@ var promise=new Promise(function(resolve,reject){
   styleO.setAttribute('type','text/css'),headO.appendChild(styleO);
   var codeContainer=document.getElementsByClassName('writeCode')[0].getElementsByTagName('code')[0];
   let n=0;
-  var timer=setInterval(()=>{
+  timer=setInterval(()=>{
     if(n>toWrite.styleCode.length){
       clearInterval(timer);
       resolve();
@@ -136,7 +159,7 @@ var promise=new Promise(function(resolve,reject){
       hljs.initHighlightingOnLoad();
      writeCodeO.scrollTop=9999;
     n++;
-  },15)
+  },20)
 });
 /*--------------------*/
 promise.then(function(value){
@@ -147,8 +170,7 @@ promise.then(function(value){
   return new Promise(function(resolve){
     let n =0;
     var skillsPO=document.querySelector('.writeResume .skills p');
-    var timer=setInterval(()=>{
-      //console.log(toWrite.professionalSkill.length);
+   timer=setInterval(()=>{
       if(n>toWrite.professionalSkill.length){
         clearInterval(timer);
         resolve();
@@ -157,13 +179,13 @@ promise.then(function(value){
       skillsPO.innerHTML=toWrite.professionalSkill.substring(0,n);
       writeResumeO.scrollTop=9999;
       n++
-    },15)
+    },20)
   })
 }).then(function(){
   return new Promise(function(resolve){
 let n=0;
 let expH2=document.querySelector('.writeResume .projectExp h2');
-let timer=setInterval(()=>{
+timer=setInterval(()=>{
   if(n>toWrite.programWorksH2.length){
     clearInterval(timer);
     resolve();
@@ -172,27 +194,33 @@ let timer=setInterval(()=>{
   expH2.innerHTML=toWrite.programWorksH2.substring(0,n);
   writeResumeO.scrollTop=9999;
   n++
-},15)
+},20)
 })
 }
 
   ).then(function(value){
-    let n=0;
-    let expP=document.querySelector('.writeResume .projectExp p');
-    let timer=setInterval(()=>{
-      if(n>toWrite.programWorks.length){
-        clearInterval(timer);
-        return
-      }
-      expP.innerHTML=toWrite.programWorks.substring(0,n);
-      writeResumeO.scrollTop=9999;
-      n++
-    },15)
+    return new Promise(function(resolve){
+      let n=0;
+      let expP=document.querySelector('.writeResume .projectExp p');
+      timer=setInterval(()=>{
+        if(n>toWrite.programWorks.length){
+          clearInterval(timer);
+          resolve();
+          return
+        }
+        expP.innerHTML=toWrite.programWorks.substring(0,n);
+        writeResumeO.scrollTop=9999;
+        n++
+      },20)
+    })
+
+  }).then(function(value){
+    toResult()
   })
 function infomation(resolve){
   let n =0;
   let infO=document.querySelector('.basicInformation');
-  let timer=setInterval(()=>{
+   timer=setInterval(()=>{
     if(n>toWrite.basicInformation.length){
       clearInterval(timer);
       resolve();
@@ -201,13 +229,13 @@ function infomation(resolve){
     infO.innerHTML=toWrite.basicInformation.substring(0,n);
     writeResumeO.scrollTop=9999;
     n++
-  },15)
+  },20)
 }
 
 function fnn(resolve){
   let n =0;
   var skillsH2O=document.querySelector('.writeResume .skills h2');
-  var timer=setInterval(()=>{
+   timer=setInterval(()=>{
     if(n>toWrite.professionalSkillH2.length){
       clearInterval(timer);
       resolve();
@@ -216,5 +244,27 @@ function fnn(resolve){
     skillsH2O.innerHTML=toWrite.professionalSkillH2.substring(0,n);
     writeResumeO.scrollTop=9999;
     n++
-  },15)
+  },20)
+}
+document.querySelector("#ending").addEventListener('click',function(){
+  var codeContainer=document.getElementsByClassName('writeCode')[0].getElementsByTagName('code')[0];
+  codeContainer.innerHTML=toWrite.styleCode;
+  hljs.initHighlightingOnLoad();
+  setTimeout(function(){
+    writeCodeO.scrollTop=9999;
+  },1500)
+  toResult()
+},false)
+function toResult(){
+  document.querySelector('.writeResume').style.display='none';
+  document.querySelector("#ending").style.display='none';
+  document.querySelector('#writeResume').style.display='block';
+  document.querySelector('.toDownloadPDF').style.display='block';
+  writeCodeO.scrollTop=9999;
+  let linker=document.createElement('link');
+  linker.setAttribute('rel','stylesheet');
+  linker.setAttribute('href','./index.css');
+  document.querySelector('head').appendChild(linker);
+  clearInterval(timer);
+  wrap.del()
 }

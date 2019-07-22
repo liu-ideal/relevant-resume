@@ -6,10 +6,38 @@
   <link rel="stylesheet" href="./ocean.css">
   <script src="./highlight.pack.js" charset="utf-8"></script>
   <!-- <link rel="stylesheet" href="./index.css"> -->
-  <style media="screen">
-
-  </style>
   </head>
+  <style type="text/css">
+  #ending{
+   height: 30px;
+   width: 150px;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   position: fixed;
+   line-height: 30px;
+   text-align: center;
+   cursor: pointer;
+   border: 1px solid rgb(49, 92, 80);
+   color: rgb(164, 82, 31);
+   z-index: 100;
+   background-color: rgb(214, 205, 203);
+   animation-name: hidshow;
+   animation-duration: 2s;
+   animation-timing-function: ease;
+   animation-direction: normal;
+   animation-iteration-count: infinite;
+ }
+ @keyframes hidshow {
+   0% {opacity: 0.9}
+   25% {opacity: 0.45}
+   50% {opacity: 0}
+   75% {opacity:0.45}
+   100% {opacity: 0.9}
+ }
+  </style>
   <body>
    <div class="generalContainer">
      <div class="writeCodeWrap">
@@ -18,8 +46,9 @@
            <code class="hljs css">
        </code>
      </pre>
-       </div>
-       <div class="toDownloadPDF">
+     <div class="toDownloadPDF" style="display:none">
+       <a href="#">点击下载P D F 简历</a>
+     </div>
        </div>
      </div>
      <div class="writeResume">
@@ -35,9 +64,10 @@
          <p></p>
        </div>
      </div>
-     <div id="writeResume" style="display:none">
+     <div id="writeResume" style='display:none'>
        <div class="basicInformation">
      <h1>刘培</h1>
+     <p>深圳  男 &nbsp 26岁</p>
      <p>求职意向： web 前 端 开 发</p>
      <p>email: liuideal@sina.com</p>
      <p>github:<a href="http://github.com/liu-ideal">github.com/liu-ideal</a></p>
@@ -45,21 +75,57 @@
        <div class="skills">
         <h2>专业技能</h2>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><span>Vue</span>/bootstrap /layui ElementUi
+            <ul>
+              <li>Vue 开发经验，掌握组件及<span>组件间数据传递</span>($emit $on eventbus)、响应式原理、 <span>vue-router</span> 和<span>vuex</span>的使用等,理解生命周期利用<span>钩子函数</span>、<span>$nextTick</span>等</li>
+              <li>能够利用bootstrap 等UI框架快速搭建应用</li>
+              <li>会使用 <span>rem</span> 、 <span>媒体查询</span>等技术制作适配移动设备的页面</li>
+            </ul>
+          </li>
+          <li>HTML5 & CSS3 & JavaScript
+            <ul>
+              <li>掌握 HTML5 新特性、深刻理解<span>语义化</span></li>
+              <li>掌握 CSS3 <span>动画</span>、<span>过渡</span>、转变、<span>弹性盒子布局</span>、媒体查询、响应式设计等常用技术</li>
+              <li>熟悉 原生JavaScript 熟悉面向对象编程 <span>原型链 作用域链 闭包</span> ，熟悉常用 <span>DOM BOM</span> 的API，了解部分<span>ES6</span>新特性（let const，Arrow function <span>Promise</span> module等）</li>
+            </ul>
+          </li>
+          <li>其他
+          <ul>
+            <li>掌握 <span>Git</span> 常用命令、代码管理 协同开发 远程仓库等</li>
+            <li>了解 <span>jQuery</span> 常用 API ，如 DOM 操作、特效、事件等</li>
+            <li>了解 <span>TCP/IP HTTP</span>协议 HTTP状态码</li>
+            <li>熟悉 原生 <span>AJAX JSON 前后端数据交互 跨域解决方案</span></li>
+            <li>理解 MVC 、<span>MVVM</span> 思想</li>
+            <li>会photoshop基本操作</li>
+            <li>有使用<span>Webpack</span> 打包项目的经验，了解其管理资源的方法，使用相关配置 如 <span>loader</span>( css-loader  file-loader) 、<span>plugins</span> 等;</li>
+          </ul>
+          </li>
         </ul>
        </div>
        <div class="projectExp">
          <h2>项目经验</h2>
          <ul>
-           <li></li>
-           <li></li>
-         </ul>      
+           <li>音乐播放器online
+          <ul>
+            <li>技术关键字：vue 响应式 移动端 组件化 css3</li>
+            <li>项目描述：项目使用vue构建 <span>适配移动端</span> 实现了音乐 <span>搜索 播放</span> 基本功能 <span>进度条</span></li>
+            <li> <a href="#">项目链接</a> <a href="#">源码链接</a> </li>
+          </ul>
+        </li>
+           <li>记事本online
+<ul>
+  <li>技术关键字：vue elment-ui</li>
+  <li>项目描述：项目实现了基本的 <span>注册</span>及<span>登录</span>登录功能 简单记事功能<span>排序 增 删 改 查</span> </li>
+  <li> <a href="#">项目链接</a> <a href="#">源码链接</a> </li>
+</ul>
+           </li>
+         </ul>
        </div>
      </div>
    </div>
-
+<div id="ending">
+  跳过书写演示
+</div>
   </body>
   <script src="./index.js" charset="utf-8"></script>
 </html>

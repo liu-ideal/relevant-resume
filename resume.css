@@ -1,0 +1,81 @@
+a{
+  text-decoration:none;
+  color:rgb(18, 93, 148);
+}
+a:hover{
+  text-decoration: underline;
+  color:rgb(86, 25, 128);
+}
+span{
+  font-weight: bold;
+}
+.generalContainer #writeResume{
+  flex-grow: 4;
+  margin-left: 40px;
+  background-color: rgb(246, 244, 240);
+  overflow: auto;
+  padding:0 30px;
+  color: rgb(0, 0, 0);
+}
+.generalContainer #writeResume .basicInformation{
+  text-align: center;
+}
+h2{
+  font-size: 19px;
+  color: rgb(72, 106, 164);
+  text-indent: 30px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+#writeResume .basicInformation{
+  margin-top: 30px;
+}
+#writeResume .basicInformation h1{
+  font-size: 22px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+#writeResume .basicInformation p{
+  margin-bottom: 8px;
+}
+#writeResume .skills{
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+#writeResume .skills>ul{
+  padding-top: 20px;
+}
+#writeResume .skills>ul>li{
+  font-size: 17px;
+  list-style: disc;
+}
+#writeResume .skills>ul>li ul li{
+  font-size: 16px;
+  list-style: circle;
+  text-indent: 15px;
+  list-style-position: inside;
+  height: 30px;
+  line-height: 30px;
+}
+#writeResume .projectExp{
+  box-sizing: border-box;
+  padding: 0 20px 20px 20px;
+  margin-top: 40px;
+}
+#writeResume .projectExp>ul{
+  padding-top: 20px;
+}
+#writeResume .projectExp>ul>li{
+  font-size: 17px;
+  list-style: disc;
+}
+#writeResume .projectExp>ul>li ul li{
+  font-size: 16px;
+  list-style: circle;
+  text-indent: 15px;
+  list-style-position: inside;
+  height: 30px;
+  line-height: 30px;
+}

@@ -1,3 +1,4 @@
+@import "./resume.css";
 /*
 * 您好，接下来您将会看到一个
 由代码实时编写我的个人简历的过程
@@ -65,13 +66,52 @@ h2{
   color: rgb(72, 106, 164);
   text-indent: 30px;
   border-bottom: 1px solid black;
-
 }
 /*--------开始书写简历 请看右边---------*/
 
 .writeResume{
   line-height: 32px;
 }
-.projectExp{
+.writeResume .projectExp{
   margin-top:-80px;
 }
+.toDownloadPDF{
+  width: 60%;
+  border: 1px solid #f9f9f9;
+  border-radius: 5px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: -20px auto 30px auto;
+
+}
+.toDownloadPDF a{
+  color: #f9f9f9;
+}
+/* #ending{
+  height: 30px;
+  width: 150px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: fixed;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgb(49, 92, 80);
+  color: rgb(164, 82, 31);
+  z-index: 100;
+  background-color: rgb(214, 205, 203);
+  animation-name: hidshow;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+@keyframes hidshow {
+  0% {opacity: 1}
+  50% {opacity: 0.5}
+  100% {opacity: 0}
+} */
