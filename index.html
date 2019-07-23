@@ -5,6 +5,7 @@
     <title></title>
   <link rel="stylesheet" href="./ocean.css">
   <script src="./highlight.pack.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_1312184_t0djs02sp4p.css">
   <!-- <link rel="stylesheet" href="./index.css"> -->
   </head>
   <style type="text/css">
@@ -36,6 +37,49 @@
    50% {opacity: 0}
    75% {opacity:0.45}
    100% {opacity: 0.9}
+ }
+ .iconfont{
+   position: fixed;
+   height: 30px;
+   line-height: 30px;
+   top: 0;
+   bottom: 0;
+   right: 40px;
+   margin-top: auto;
+   margin-bottom: auto;
+   color: rgb(14, 161, 68);
+   cursor: pointer;
+   font-size: 26px;
+   animation-name: bgmusic;
+   animation-duration: 1s;
+   animation-timing-function: ease;
+   animation-delay: .2s;
+   animation-iteration-count: infinite;
+   z-index: 100;
+ }
+ @keyframes bgmusic {
+   from {opacity: 0.9}
+   25% {transform: rotateX(-45deg);
+       opacity: 0.6;
+       font-size: 22px;
+       transform: translateY(-10px);
+   }
+   25% {transform: rotateX(45deg);
+       opacity: 0.6;
+       font-size: 20px;
+       transform: translateY(-15px);
+   }
+   75% {transform: rotateX(0deg);
+       opacity: 0.3;
+       font-size: 18px;
+       transform: translateY(-20px);
+   }
+   to{
+     transform: rotateX(0deg);
+         opacity: 0.1;
+         font-size: 13px;
+         transform: translateY(-25px);
+   }
  }
   </style>
   <body>
@@ -71,6 +115,7 @@
      <p>求职意向： web 前 端 开 发</p>
      <p>email: liuideal@sina.com</p>
      <p>github:<a href="http://github.com/liu-ideal">github.com/liu-ideal</a></p>
+     <p><a href="http://github.com/liu-ideal">简历源码</a>&nbsp&nbsp&nbsp<a href="#">下载简历(PDF)</a></p>
        </div>
        <div class="skills">
         <h2>专业技能</h2>
@@ -126,6 +171,10 @@
 <div id="ending">
   跳过书写演示
 </div>
+<i class="iconfont icon-yinfu" title="点击控制背景音乐"></i>
+<audio loop='loop' id='startPlay'>
+<source src="./Journey.mp3" type="audio/mpeg" />
+</audio>
   </body>
   <script src="./index.js" charset="utf-8"></script>
 </html>

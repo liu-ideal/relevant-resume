@@ -33,7 +33,7 @@ body{
   box-sizing: border-box;
 }
 .generalContainer .writeCodeWrap{
-  flex-grow: 1;
+  flex-grow: 0;
 
 }
 /*写个简历框用来放简历*/

@@ -81,12 +81,12 @@ body{
   box-sizing: border-box;
 }
 .generalContainer .writeCodeWrap{
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
 /*写个简历框用来放简历*/
 .generalContainer .writeResume{
-  flex-grow: 5;
+  flex-grow: 1;
   margin-left: 40px;
   background-color: rgb(246, 244, 240);
   overflow: auto;
@@ -137,7 +137,34 @@ let wrap=(function(){
     del:del
   }
 })();
+let playMusic=(function(){
+  let targetElement=document.querySelector('#startPlay');
+
+  function goPlay(){
+    if(targetElement.play){
+        targetElement.play()
+    }
+  };
+  function stopPlay(){
+    if(targetElement.pause){
+      targetElement.pause()
+    }
+  };
+  return {
+    goPlay:goPlay,
+    stopPlay:stopPlay
+  }
+})();
+
 wrap.insert();
+document.body.onclick=function(){  //解决chrome浏览器不自动播放音乐的问题
+  playMusic.goPlay();
+  this.onclick='';
+};
+document.querySelector('.iconfont').addEventListener('click',()=>{
+  let targetElement=document.querySelector('#startPlay');
+    targetElement.paused?playMusic.goPlay():targetElement.pause()
+},false)
 var writeResumeO=document.querySelector('.writeResume');
 var writeCodeO=document.getElementsByClassName('writeCode')[0];
 let timer=null;
