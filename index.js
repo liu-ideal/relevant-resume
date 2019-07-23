@@ -142,6 +142,7 @@ let playMusic=(function(){
 
   function goPlay(){
     if(targetElement.play){
+      targetElement.oncanplay=targetElement.play;
         targetElement.play()
     }
   };
