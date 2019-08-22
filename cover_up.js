@@ -1,3 +1,4 @@
+"use strict";
 let wrap=(function(){
   let wrap=document.createElement('div');
   wrap.style.position='fixed';

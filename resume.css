@@ -19,6 +19,13 @@ span{
 }
 .generalContainer #writeResume .basicInformation{
   text-align: center;
+  position: relative;
+}
+.generalContainer #writeResume .basicInformation img{
+ position: absolute;
+ width: 100px;
+ top:15%;
+ right: 25%;
 }
 h2{
   font-size: 19px;

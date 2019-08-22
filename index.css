@@ -34,11 +34,11 @@ body{
 }
 .generalContainer .writeCodeWrap{
   flex-grow: 0;
-
+  height: 100%;
 }
 /*写个简历框用来放简历*/
 .generalContainer .writeResume{
-  flex-grow: 5;
+  flex-grow: 1;
   margin-left: 40px;
   background-color: rgb(246, 244, 240);
   overflow: auto;
@@ -61,6 +61,7 @@ body{
 .generalContainer .writeResume .basicInformation{
   text-align: center;
 }
+
 h2{
   font-size: 19px;
   color: rgb(72, 106, 164);

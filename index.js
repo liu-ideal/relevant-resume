@@ -1,3 +1,4 @@
+"use strict";
 var toWrite =new Object();
 toWrite.professionalSkillH2=`专业技能`;
 toWrite.professionalSkill=`## Vue / bootstrap/layui ElementUi
@@ -51,6 +52,7 @@ toWrite.styleCode=`
 }
 html{
   height: 100%;
+
 }
 
 /*添加一个深色背景*/
@@ -82,6 +84,7 @@ body{
 }
 .generalContainer .writeCodeWrap{
   flex-grow: 0;
+  height: 100%;
 }
 
 /*写个简历框用来放简历*/
