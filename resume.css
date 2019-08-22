@@ -50,6 +50,7 @@ h2{
 #writeResume .skills>ul>li{
   font-size: 17px;
   list-style: disc;
+  padding: 15px 0;
 }
 #writeResume .skills>ul>li ul li{
   font-size: 16px;
@@ -70,6 +71,7 @@ h2{
 #writeResume .projectExp>ul>li{
   font-size: 17px;
   list-style: disc;
+  padding: 15px 0;
 }
 #writeResume .projectExp>ul>li ul li{
   font-size: 16px;
