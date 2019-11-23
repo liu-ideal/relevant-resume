@@ -290,7 +290,6 @@ function toResult(){
   document.querySelector('.writeResume').style.display='none';
   document.querySelector("#ending").style.display='none';
   document.querySelector('#writeResume').style.display='block';
-  document.querySelector('.toDownloadPDF').style.display='block';
   writeCodeO.scrollTop=9999;
   let linker=document.createElement('link');
   linker.setAttribute('rel','stylesheet');
