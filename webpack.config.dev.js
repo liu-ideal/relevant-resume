@@ -2,9 +2,11 @@ const path = require('path');
 const MiniCssExtractPlugin =require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports={
-  entry:"./src/main.jsx",
+  entry:{
+    main:"./index.js"
+  },
   output:{
-    filename:"bundle.js",
+    filename:"[name]-[hash].js",
     path:path.resolve(__dirname,'./dist')
   },
   mode:'development',
@@ -15,7 +17,7 @@ module.exports={
         use:{
           loader:'babel-loader',
           options:{
-            presets:['@babel/preset-env','@babel/preset-react']
+            presets:['@babel/preset-env']
           }
         },
         exclude:/node_modules/
@@ -24,7 +26,7 @@ module.exports={
         test:/\.css$/,
         use:[
           {loader:'style-loader'},
-          {loader:'css-loader',options:{modules:true}}
+          {loader:'css-loader',options:{modules:false}}
         ]
       },
       {
@@ -48,7 +50,7 @@ module.exports={
     //   ignoreOrder: false // Enable to remove warnings about conflicting order
     // }),
     new HtmlWebpackPlugin({
-      template:'./src/index.html'
+      template:'./index.html'
     })
   ],
   devtool: 'cheap-module-eval-source-map',

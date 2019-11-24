@@ -1,0 +1,73 @@
+*{
+  padding: 0;
+  margin: 0;
+  transition: all .3s;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  background-color: rgb(29, 45, 51);
+  font-family: 'Arial','Microsoft YaHei';
+  font-size: 15px;
+  height: 100%;
+}
+
+pre{overflow-y: scroll;height: 100%;}
+
+.generalContainer{
+  color: rgb(247, 245, 242);
+  display: flex;
+  padding: 15px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.generalContainer .writeCodeWrap{
+  flex-grow: 0;
+  height: 100%;
+  font-size: 12px;
+}
+
+.generalContainer .writeResume{
+  flex-grow: 1;
+  margin-left: 40px;
+  background-color: rgb(246, 244, 240);
+  overflow: auto;
+  padding:0 30px;
+}
+
+.generalContainer .writeCodeWrap .writeCode{
+  box-sizing: border-box;
+  padding: 10px 0 0 8px;
+  height:100%;
+  border: 1px solid rgb(70, 71, 74);
+
+}
+
+.generalContainer .writeResume{
+  white-space: pre;
+  color: rgb(0, 0, 0)
+}
+
+.generalContainer .writeResume .basicInformation{
+  text-align: center;
+}
+
+h2{
+  font-size: 19px;
+  color: rgb(72, 106, 164);
+  text-indent: 30px;
+  border-bottom: 1px solid black;
+}
+
+.writeResume{
+  line-height: 32px;
+}
+.writeResume .projectExp{
+  margin-top:-80px;
+}

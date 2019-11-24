@@ -19,3 +19,4 @@ let wrap=(function(){
     del:del
   }
 })();
+module.exports=wrap;

@@ -1,6 +1,7 @@
-/*! highlight.js v9.15.8 | BSD3 License | git.io/hljslicense */ ! function(e) {
+/*! highlight.js v9.15.8 | BSD3 License | git.io/hljslicense */
+! function(e) {
   var n = "object" == typeof window && window || "object" == typeof self && self;
-  "undefined" != typeof exports ? e(exports) : n && (n.hljs = e({}), "function" == typeof define && define.amd && define([], function() {
+  "undefined" != typeof exportss ? e(exportss) : n && (n.hljs = e({}), "function" == typeof define && define.amd && define([], function() {
     return n.hljs
   }))
 }(function(a) {

@@ -4,85 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title></title>
-  <link rel="stylesheet" href="./ocean.css">
   <script src="./highlight.pack.js" charset="utf-8"></script>
   <link rel="stylesheet" href="http://at.alicdn.com/t/font_1312184_t0djs02sp4p.css">
+  <link rel="stylesheet" media="screen and (min-device-width:750px)" href="./index.css">
+  <link rel="stylesheet" media="screen and (max-device-width：749px)" href="./mobile.css">
   <!-- <link rel="stylesheet" href="./index.css"> -->
   </head>
-  <style type="text/css">
-  #ending{
-   height: 30px;
-   width: 150px;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   margin: auto;
-   position: fixed;
-   line-height: 30px;
-   text-align: center;
-   cursor: pointer;
-   border: 1px solid rgb(49, 92, 80);
-   color: rgb(164, 82, 31);
-   z-index: 100;
-   background-color: rgb(214, 205, 203);
-   animation-name: hidshow;
-   animation-duration: 2s;
-   animation-timing-function: ease;
-   animation-direction: normal;
-   animation-iteration-count: infinite;
- }
- @keyframes hidshow {
-   0% {opacity: 0.9}
-   25% {opacity: 0.45}
-   50% {opacity: 0}
-   75% {opacity:0.45}
-   100% {opacity: 0.9}
- }
- .iconfont{
-   position: fixed;
-   height: 30px;
-   line-height: 30px;
-   top: 0;
-   bottom: 0;
-   right: 40px;
-   margin-top: auto;
-   margin-bottom: auto;
-   color: rgb(14, 161, 68);
-   cursor: pointer;
-   font-size: 26px;
-   animation-name: bgmusic;
-   animation-duration: 1s;
-   animation-timing-function: ease;
-   animation-delay: .2s;
-   animation-iteration-count: infinite;
-   z-index: 100;
- }
- @keyframes bgmusic {
-   from {opacity: 0.9}
-   25% {transform: rotateX(-45deg);
-       opacity: 0.6;
-       font-size: 22px;
-       transform: translateY(-10px);
-   }
-   25% {transform: rotateX(45deg);
-       opacity: 0.6;
-       font-size: 20px;
-       transform: translateY(-15px);
-   }
-   75% {transform: rotateX(0deg);
-       opacity: 0.3;
-       font-size: 18px;
-       transform: translateY(-20px);
-   }
-   to{
-     transform: rotateX(0deg);
-         opacity: 0.1;
-         font-size: 13px;
-         transform: translateY(-25px);
-   }
- }
-  </style>
   <body>
    <div class="generalContainer">
      <div class="writeCodeWrap">
@@ -106,7 +33,7 @@
          <p></p>
        </div>
      </div>
-     <div id="writeResume" style='display:none'>
+     <div id="writeResume">
        <div class="basicInformation">
      <h1>刘培</h1>
      <p>男 &nbsp (1993-5)</p>
@@ -123,7 +50,7 @@
         <ul>
               <li><span>Vue</span><span>&nbsp&nbspReact</span></li>
               <li>使用 vue 和 react开发项目</li>
-              <li>手动搭建node生态圈下的开发环境,主要是使用<span>webpack</span></li>
+              <li>工作中手动搭建node生态圈下的开发环境,主要是使用<span>webpack</span></li>
               <li>手写过一个脚手架工具 liu-node-cli (框架官方cli配置项功能太多,配置比较乱)已在npm上线可以使用</li>
               <li>注:还不会react native</li>
         </ul>
@@ -133,7 +60,8 @@
           <ul>
             <li>主要是使用<span>Nodejs</span>打包项目并上线</li>
             <li>使用过<span>mysql</span>也写过一点PHP接口</li>
-            <li>熟悉前后端合作协同开发,沟通统一的数据格式,遇到问题合作解决</li>
+            <li>熟练前端与服务器的整个开发运作原理，能够很好的把控工作流程</li>
+            <li>熟悉前后端合作协同开发，沟通好统一的数据格式，遇到接口出错问题或参数出错会与后台人员协商解决冲突</li>
           </ul>
           <h2>其他</h2>
           <ul>
@@ -141,13 +69,13 @@
           </ul>
           <h2>小作品</h2>
           <ul>
-            <li><a src="#">vue简易记事本</a><a src="#">vue移动端音乐播放器(请求API有时会报错)</a><a src="#">react小demo</a></li>
+            <li><a src="#" class="mydemo">vue简易记事本</a><a src="#" class="mydemo">vue移动端音乐播放器(请求API有时会报错)</a><a src="#" class="mydemo">react小demo</a></li>
           </ul>
           <h2>个人总结</h2>
            <ul>
-             <li>目前入行前端已经1年，工作中主要是负责前端页面的渲染及封装公共组件，可以熟练使用大多数前端相关工具(技术栈)和新语法</li>
+             <li>目前入行前端已经1年，工作中主要是负责前端页面的渲染及封装一些公共组件，可以熟练使用大多数前端相关工具(技术栈)和新语法</li>
              <li>自我认为前端基础知识很扎实，不过未来的期待的职业方向是全栈开发</li>
-             <li>平时工作作风严禁认真(当天任务当天完成) 服从安排</li>
+             <li>平时工作作风严禁认真(当天任务当天完成)</li>
            </ul>
        </div>
      </div>
@@ -161,8 +89,4 @@
 </audio>
   </body>
   <script src="./index.js" charset="utf-8"></script>
-  <script type="text/javascript">
-  var aa=  document.getElementsByTagName('meta');
-  setInterval(function(){console.log(window.devicePixelRatio)},2000)
-  </script>
 </html>
