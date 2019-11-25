@@ -139,10 +139,6 @@ let playMusic=(function(){
 })();
 
 wrap.insert();
-document.body.onclick=function(){  //解决chrome浏览器不自动播放音乐的问题
-  playMusic.goPlay();
-  this.onclick='';
-};
 document.querySelector('.iconfont').addEventListener('click',()=>{
   let targetElement=document.querySelector('#startPlay');
     targetElement.paused?playMusic.goPlay():targetElement.pause()
@@ -168,6 +164,7 @@ let promise=new Promise(function(resolve,reject){
       hljs.initHighlightingOnLoad();
      writeCodeO.scrollTop=9999;
     n++;
+    handleDeviceSize(toResult);
   },10)
 });
 /*--------------------*/
@@ -187,7 +184,8 @@ promise.then(function(value){
       }
       skillsPO.innerHTML=toWrite.professionalSkill.substring(0,n);
       writeResumeO.scrollTop=9999;
-      n++
+      n++;
+      handleDeviceSize(toResult);
     },10)
   })
 }).then(function(){
@@ -202,7 +200,8 @@ timer=setInterval(()=>{
   }
   expH2.innerHTML=toWrite.programWorksH2.substring(0,n);
   writeResumeO.scrollTop=9999;
-  n++
+  n++;
+  handleDeviceSize(toResult);
 },10)
 })
 }
@@ -219,7 +218,8 @@ timer=setInterval(()=>{
         }
         expP.innerHTML=toWrite.programWorks.substring(0,n);
         writeResumeO.scrollTop=9999;
-        n++
+        n++;
+        handleDeviceSize(toResult);
       },10)
     })
 
@@ -237,7 +237,8 @@ function infomation(resolve){
     }
     infO.innerHTML=toWrite.basicInformation.substring(0,n);
     writeResumeO.scrollTop=9999;
-    n++
+    n++;
+    handleDeviceSize(toResult);
   },10)
 }
 
@@ -252,19 +253,20 @@ function fnn(resolve){
     }
     skillsH2O.innerHTML=toWrite.professionalSkillH2.substring(0,n);
     writeResumeO.scrollTop=9999;
-    n++
+    n++;
+    handleDeviceSize(toResult);
   },10)
 }
 document.querySelector("#ending").addEventListener('click',function(){
-  let codeContainer=document.getElementsByClassName('writeCode')[0].getElementsByTagName('code')[0];
-  codeContainer.innerHTML=toWrite.styleCode;
-  hljs.initHighlightingOnLoad();
   setTimeout(function(){
     writeCodeO.scrollTop=9999;
   },1500)
   toResult()
 },false)
 function toResult(){
+  let codeContainer=document.getElementsByClassName('writeCode')[0].getElementsByTagName('code')[0];
+  codeContainer.innerHTML=toWrite.styleCode;
+  hljs.initHighlightingOnLoad();
   document.querySelector('.writeResume').style.display='none';
   document.querySelector("#ending").style.display='none';
   document.querySelector('#writeResume').style.display='block';
@@ -275,4 +277,9 @@ function toResult(){
   document.querySelector('head').appendChild(linker);
   clearInterval(timer);
   wrap.del()
+}
+function handleDeviceSize(handle){
+  let devWidth=window.screen.width;
+  let clientWidth=document.body.clientWidth;
+  if(devWidth<=750||clientWidth<=750){handle()}
 }
