@@ -10,10 +10,11 @@
 .iconfont{
   display: none
 }
-
+span{
+  font-weight: bold;
+}
 .generalContainer #writeResume{
   flex-grow: 1;
-  margin-left: 40px;
   background-color: rgb(246, 244, 240);
   overflow: auto;
   padding:0 30px;

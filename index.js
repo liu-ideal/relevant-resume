@@ -18,12 +18,11 @@ toWrite.programWorks=`
 使用过mysql也写过一点PHP接口
 熟悉前后端合作协同开发,沟通统一的数据格式,遇到问题合作解决
 `;
-toWrite.othersH2=`其他`
+toWrite.othersH2=`其他`;
 toWrite.others=`
   会微信小程序开发 web移动端 处理响应式页面需求
-`
+`;
 toWrite.styleCode=`
-
 *{
   padding: 0;
   margin: 0;
@@ -137,12 +136,11 @@ let playMusic=(function(){
     stopPlay:stopPlay
   }
 })();
-
 wrap.insert();
 document.querySelector('.iconfont').addEventListener('click',()=>{
   let targetElement=document.querySelector('#startPlay');
     targetElement.paused?playMusic.goPlay():targetElement.pause()
-},false)
+},false);
 let writeResumeO=document.querySelector('.writeResume');
 let writeCodeO=document.getElementsByClassName('writeCode')[0];
 let timer=null;
@@ -165,7 +163,7 @@ let promise=new Promise(function(resolve,reject){
      writeCodeO.scrollTop=9999;
     n++;
     handleDeviceSize(toResult);
-  },10)
+  },10);
 });
 /*--------------------*/
 promise.then(function(value){
@@ -205,7 +203,6 @@ timer=setInterval(()=>{
 },10)
 })
 }
-
   ).then(function(value){
     return new Promise(function(resolve){
       let n=0;
@@ -225,7 +222,7 @@ timer=setInterval(()=>{
 
   }).then(function(value){
     toResult()
-  })
+  });
 function infomation(resolve){
   let n =0;
   let infO=document.querySelector('.basicInformation');
@@ -240,8 +237,7 @@ function infomation(resolve){
     n++;
     handleDeviceSize(toResult);
   },10)
-}
-
+};
 function fnn(resolve){
   let n =0;
   let skillsH2O=document.querySelector('.writeResume .skills h2');
@@ -256,13 +252,13 @@ function fnn(resolve){
     n++;
     handleDeviceSize(toResult);
   },10)
-}
+};
 document.querySelector("#ending").addEventListener('click',function(){
   setTimeout(function(){
     writeCodeO.scrollTop=9999;
   },1500)
   toResult()
-},false)
+},false);
 function toResult(){
   let codeContainer=document.getElementsByClassName('writeCode')[0].getElementsByTagName('code')[0];
   codeContainer.innerHTML=toWrite.styleCode;
@@ -277,9 +273,9 @@ function toResult(){
   document.querySelector('head').appendChild(linker);
   clearInterval(timer);
   wrap.del()
-}
+};
 function handleDeviceSize(handle){
   let devWidth=window.screen.width;
   let clientWidth=document.body.clientWidth;
   if(devWidth<=750||clientWidth<=750){handle()}
-}
+};
